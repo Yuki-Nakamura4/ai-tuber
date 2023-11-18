@@ -1,0 +1,2 @@
+> 0 MacBook Airのマイク, Core Audio (1 in, 0 out)
+< 1 MacBook Airのスピーカー, Core Audio (0 in, 2 out)
