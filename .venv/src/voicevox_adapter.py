@@ -4,8 +4,8 @@ import io
 import soundfile
 
 
-class VoiceVoxAdapter:
-    url = "http://127.0.0.1:50021/"
+class VoicevoxAdapter:
+    URL = "http://127.0.0.1:50021/"
 
     # 2回postする。一回目で変換、二回目で音声合成
     def __init__(self) -> None:
@@ -16,7 +16,7 @@ class VoiceVoxAdapter:
             "text": text,
             "speaker": speaker_id,
         }
-        response = requests.post(self.url + "audio_query", params=item_data)
+        response = requests.post(self.URL + "audio_query", params=item_data)
         return response.json()
 
     def __create_request_audio(self, query_data, speaker_id: int) -> bytes:
@@ -32,3 +32,17 @@ class VoiceVoxAdapter:
         )
         print(res.status_code)
         return res.content
+
+    def get_voice(self, text: str):
+        speaker_id = 3
+        query_data: json = self.create_audio_query(text, speaker_id=speaker_id)
+        audio_bytes = self.__create_request_audio(query_data, speaker_id=speaker_id)
+        audio_stream = io.BytesIO(audio_bytes)
+        data, sample_rate = soundfile.read(audio_stream)
+        return data, sample_rate
+
+
+if __name__ == "__main__":
+    voicevox = VoicevoxAdapter()
+    data, sample_rate = voicevox.get_voice("こんにちは")
+    print(data, sample_rate)
