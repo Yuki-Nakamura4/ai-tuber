@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 openai.api_key = os.environ.get("OPEN_API_KEY")
 
 
-class OpenAPIAdapter:
+class OpenAIAdapter:
     def __init__(self):
         # system_promptはsystem_prompt.txtから読み込む
         with open("system_prompt.txt", "r", encoding="utf-8") as f:
@@ -34,6 +34,6 @@ class OpenAPIAdapter:
 
 
 if __name__ == "__main__":
-    adapter = OpenAPIAdapter()
+    adapter = OpenAIAdapter()
     response_text = adapter.create_chat("こんにちは")
     print(response_text)
