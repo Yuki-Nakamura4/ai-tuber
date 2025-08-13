@@ -1,0 +1,7 @@
+dotenv
+obsws_python
+requests
+soundfile
+openai
+pytchat
+sounddevice
