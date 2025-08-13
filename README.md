@@ -7,6 +7,14 @@ https://www.amazon.co.jp/AITuber%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3
 
 上記を参考にしました。
 
+## 開発手順(Mac)
+
+1. `python3 -m venv .venv`を実行し仮想環境を作成
+
+2. `source .venv/bin/activate`を実行し仮想環境を実行
+
+3. `pip install -r requirements.txt`で依存パッケージをインストール
+
 ## 配信手順
 
 1. OBS で画面右下「配信の管理」を押す(ここでエラーが出た場合は OAuth の認可期限が切れている可能性があるので、OBS の「設定」→「配信」からアカウントの再接続を行う)
@@ -18,8 +26,4 @@ https://www.amazon.co.jp/AITuber%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3
    - .env ファイルの `YOUTUBE_VIDEO_ID`
    - コメント欄用ブラウザソースの参照する URL の末尾(`v=`の部分)
 
-4. 以下手順で OBS 上で動作確認を行う
-
-   - `source .venv/bin/activate`を実行
-   - `pip install -r requirements.txt`で依存をインストール
-   - `python3 run.py` を実行
+4. 仮想環境上で`python3 run.py` を実行し、OBS で動作確認を行う
