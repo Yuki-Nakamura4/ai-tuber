@@ -6,13 +6,15 @@ AI Tuber を作って配信するためのリポジトリ。
 
 上記を参考にしました。
 
-## 開発手順(Mac)
+## 開発手順
 
-1. `python3 -m venv .venv`を実行し仮想環境を作成
+1. `python3 -m venv .venv`を実行し仮想環境を作成する
 
-2. `source .venv/bin/activate`を実行し仮想環境を実行
+2. `source .venv/bin/activate`を実行し仮想環境を実行する
 
-3. `pip install -r requirements.txt`で依存パッケージをインストール
+3. `pip install -r requirements.txt`で依存パッケージをインストールする
+
+4. `.env.template`をコピーして`.env`を作成し、必要なクレデンシャルを埋める
 
 ## 配信手順
 
@@ -25,9 +27,7 @@ AI Tuber を作って配信するためのリポジトリ。
    - .env ファイルの `YOUTUBE_VIDEO_ID`
    - コメント欄用ブラウザソースの参照する URL の末尾(`v=`の部分)
 
-4. VoiceVox を起動する。
-
-   - サーバーが起動している状態だと `http://127.0.0.1:50021/docs`で Swagger 形式の API ドキュメントが見られる
+4. Style-Bert-VITS2 フォルダ直下で仮想環境に入り、`python3 server_fastapi.py`で Style Bert VITS2 のサーバーを起動する
 
 5. OBS の「音声ミキサー」下にある歯車マーク(「オーディオの詳細プロパティ」)を開き、「マイク」の「音声モニタリング」を「モニターと出力」に変更する
 
